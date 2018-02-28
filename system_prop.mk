@@ -5,7 +5,7 @@
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.do_not_init_csvt=1 \
-    rild.libpath=/vendor/lib/libril-qc-qmi-1.so \
+    vendor.rild.libpath=/vendor/lib/libril-qc-qmi-1.so \
     ro.telephony.call_ring.multiple=0 \
     ro.telephony.default_network=9 \
     telephony.lteOnCdmaDevice=0 \
