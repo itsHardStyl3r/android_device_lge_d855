@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,31 +15,40 @@
 # limitations under the License.
 #
 
-# inherit from common g3
+# Inherit from lge g3-common
 -include device/lge/g3-common/BoardConfigCommon.mk
+
+DEVICE_PATH := device/lge/d855
 
 TARGET_OTA_ASSERT_DEVICE := g3,d855
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/d855/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 
-# Extended Filesystem Support
-TARGET_EXFAT_DRIVER := sdfat
+# FM Radio
+AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
+BOARD_HAVE_QCOM_FM := true
+TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # Kernel
 TARGET_KERNEL_CONFIG := lineageos_d855_defconfig
 TARGET_REQUIRES_BUMP := true
+TARGET_EXFAT_DRIVER := sdfat
+
+# NFC
+BOARD_NFC_CHIPSET := pn547
+BOARD_NFC_HAL_SUFFIX := msm8974
 
 # Partitions
-BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_CACHEIMAGE_PARTITION_SIZE    := 637534208
+BOARD_CACHEIMAGE_PARTITION_SIZE := 637534208
+BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_PERSISTIMAGE_PARTITION_SIZE  := 33554432
+BOARD_PERSISTIMAGE_PARTITION_SIZE := 33554432
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2164260864
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12297699328
@@ -47,11 +56,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/lge/d855/rootdir/etc/fstab.g3
-
-# NFC
-BOARD_NFC_CHIPSET := pn547
-BOARD_NFC_HAL_SUFFIX := msm8974
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.g3
 
 # RIL
 BOARD_GLOBAL_CFLAGS += -DUSE_RIL_VERSION_10
@@ -72,10 +77,5 @@ WIFI_DRIVER_FW_PATH_AP := "ap"
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
-# FM Radio
-AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
-BOARD_HAVE_QCOM_FM := true
-TARGET_QCOM_NO_FM_FIRMWARE := true
-
-# inherit from the proprietary version
+# Inherit from the proprietary version
 -include vendor/lge/d855/BoardConfigVendor.mk
