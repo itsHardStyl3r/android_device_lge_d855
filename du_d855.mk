@@ -21,11 +21,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from d855 device
 $(call inherit-product, device/lge/d855/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common DirtyUnicorns stuff.
+$(call inherit-product, vendor/du/config/common_full_phone.mk)
+$(call inherit-product-if-exists, vendor/extras/configs/phone-xxhdpi-2048-dalvik-heap.mk)
 
 PRODUCT_DEVICE := d855
-PRODUCT_NAME := lineage_d855
+PRODUCT_NAME := du_d855
 PRODUCT_BRAND := lge
 PRODUCT_MODEL := LG-D855
 PRODUCT_MANUFACTURER := LGE
@@ -36,7 +37,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="g3_global_com-user 6.0 MRA58K 1811508491752 release-keys"
 
 BUILD_FINGERPRINT="lge/g3_global_com/g3:6.0/MRA58K/1811508491752:user/release-keys"
-
-# Vendor security patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.lineage.build.vendor_security_patch=2016-08-01
