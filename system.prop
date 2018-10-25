@@ -1,6 +1,3 @@
-# Bluetooth
-qcom.bluetooth.soc=smd
-
 # Radio
 persist.radio.do_not_init_csvt=1
 rild.libpath=/vendor/lib/libril-qc-qmi-1.so
