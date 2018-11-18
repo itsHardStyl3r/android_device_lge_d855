@@ -21,11 +21,16 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from d855 device
 $(call inherit-product, device/lge/d855/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common BootLeggers stuff.
+$(call inherit-product, vendor/bootleggers/config/common_full_phone.mk)
+TARGET_BOOTLEGGERS_BOOTANIMATION := 4
+
+# Device Maintainers
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    DEVICE_MAINTAINERS="hardStyl3r"
 
 PRODUCT_DEVICE := d855
-PRODUCT_NAME := lineage_d855
+PRODUCT_NAME := bootleg_d855
 PRODUCT_BRAND := lge
 PRODUCT_MODEL := LG-D855
 PRODUCT_MANUFACTURER := LGE
