@@ -11,3 +11,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=9 \
     telephony.lteOnCdmaDevice=0 \
     telephony.lteOnGsmDevice=1
+
+# Security Patch Level (V21c)
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.build.security_patch=2015-12-01
