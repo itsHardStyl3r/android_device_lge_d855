@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_d855.mk
+    $(LOCAL_DIR)/bootleg_d855.mk
