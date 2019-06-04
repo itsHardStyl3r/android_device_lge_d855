@@ -2,6 +2,11 @@
 # System properties for d855
 #
 
+# Bluetooth
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.bluetooth.soc=smd \
+    vendor.qcom.bluetooth.soc=smd
+
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.do_not_init_csvt=1 \
