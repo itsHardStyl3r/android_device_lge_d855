@@ -43,6 +43,11 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 12297699328
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
+# the /cust partition we are using for /vendor is 268MB
+# but keep it 256MB just in case
+BOARD_VENDORIMAGE_PARTITION_SIZE := 268435456 # 256M
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+
 # Recovery
 TARGET_RECOVERY_FSTAB := device/lge/d855/rootdir/etc/fstab.g3
 
