@@ -15,3 +15,8 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/rr_d855.mk
+
+COMMON_LUNCH_CHOICES := \
+    rr_d855-userdebug \
+    rr_d855-eng \
+    rr_d855-user
