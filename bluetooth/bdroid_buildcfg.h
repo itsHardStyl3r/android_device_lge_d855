@@ -17,8 +17,6 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME "LG G3 (D855)"
-
 #define BLE_VND_INCLUDED          TRUE
 
 #endif

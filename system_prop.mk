@@ -13,4 +13,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    qcom.bluetooth.soc=smd
+    qcom.bluetooth.soc=smd \
+    bluetooth.device.default_name=G3
