@@ -53,9 +53,7 @@ BOARD_NFC_HAL_SUFFIX := msm8974
 BOARD_HAS_QCOM_WLAN := false
 
 # FM Radio
-AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
-BOARD_HAVE_QCOM_FM := true
-TARGET_QCOM_NO_FM_FIRMWARE := true
+BOARD_HAVE_QCOM_FM := false
 
 # inherit from the proprietary version
 -include vendor/lge/d855/BoardConfigVendor.mk
