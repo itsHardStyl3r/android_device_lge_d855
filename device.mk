@@ -33,12 +33,6 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_PACKAGES += \
     librmnetctl
 
-# Wifi
-PRODUCT_PACKAGES += \
-    hostapd_default.conf \
-    libwcnss_qmi \
-    wcnss_service
-
 # NFC packages
 PRODUCT_PACKAGES += \
     NfcNci
